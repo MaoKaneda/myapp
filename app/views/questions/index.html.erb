@@ -1,0 +1,14 @@
+<h1>質問一覧</h1>
+
+<% if @questions.any? %>
+  <ul>
+    <% @questions.each do |question| %>
+      <li>
+        <h2><%= question.title %></h2>
+        <p><%= question.content %></p>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>まだ質問はありません。</p>
+<% end %> 

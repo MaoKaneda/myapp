@@ -1,0 +1,10 @@
+<h1>新しい質問を投稿</h1>
+
+<%= form_with model: @question, local: true do |form| %>
+  <div>
+    <%= form.label :title, "タイトル" %>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :content, "内容" %>
+    <%= form.text_area
