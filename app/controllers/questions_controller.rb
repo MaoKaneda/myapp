@@ -3,6 +3,12 @@ class QuestionsController < ApplicationController
     @questions = Question.all
   end
 
+  def show
+    @question = Question.find(params[:id])
+    @answer = Answer.new
+    @answers = @question.answers.order(created_at: :desc)
+  end
+
   def new
     @question = Question.new
   end
@@ -19,6 +25,6 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:title, :content)
+    params.require(:question).permit(:title, :content, :author)
   end
 end

@@ -1,0 +1,52 @@
+<header class="header">
+  <%= link_to 'TechChat', root_path, class: 'header-title' %>
+  <%= link_to '質問する', new_question_path, class: 'header-button' %>
+</header>
+
+<div class="main-content">
+  <div class="question-detail">
+    <h2>質問詳細</h2>
+    <div class="detail-item">
+      <div class="detail-label">タイトル：</div>
+      <div class="detail-content"><%= @question.title %></div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">質問内容：</div>
+      <div class="detail-content"><%= @question.content %></div>
+    </div>
+    <div class="detail-item">
+      <div class="detail-label">投稿者名：</div>
+      <div class="detail-content"><%= @question.author %></div>
+    </div>
+  </div>
+
+  <div class="answer-form">
+    <h3>回答を投稿する</h3>
+    <%= form_with(model: [@question, @answer], local: true) do |f| %>
+      <div class="form-field">
+        <%= f.text_area :content, placeholder: '回答内容' %>
+      </div>
+      <div class="form-field">
+        <%= f.text_field :author, placeholder: '投稿者名' %>
+      </div>
+      <%= f.submit '回答を投稿', class: 'post-button' %>
+    <% end %>
+  </div>
+
+  <div class="answers-list">
+    <h3>回答一覧</h3>
+    <% if @answers.any? %>
+      <% @answers.each do |answer| %>
+        <div class="answer-item">
+          <div class="answer-content"><%= answer.content %></div>
+          <div class="answer-meta">
+            <span class="answer-author">投稿者：<%= answer.author %></span>
+            <span class="answer-date"><%= l answer.created_at, format: :short %></span>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>まだ回答はありません。</p>
+    <% end %>
+  </div>
+</div> 

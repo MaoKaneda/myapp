@@ -1,5 +1,5 @@
 <header class="header">
-  <h1 class="header-title">TechChat</h1>
+  <%= link_to 'TechChat', root_path, class: 'header-title' %>
   <%= link_to '質問する', new_question_path, class: 'header-button' %>
 </header>
 
@@ -8,13 +8,15 @@
     <% @questions.each do |question| %>
       <div class="question-item">
         <div class="comment-count">
-          <div class="count-number">0</div>
+          <div class="count-number"><%= question.answers.count %></div>
           <div class="count-label">comments</div>
         </div>
         <div class="question-content">
-          <h2 class="question-title"><%= question.title %></h2>
+          <h2 class="question-title">
+            <%= link_to question.title, question_path(question), class: 'question-link' %>
+          </h2>
           <p class="question-text"><%= question.content %></p>
-          <div class="question-meta">投稿者名</div>
+          <div class="question-meta">投稿者：<%= question.author %></div>
         </div>
       </div>
     <% end %>

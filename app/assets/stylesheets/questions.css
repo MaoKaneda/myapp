@@ -1,96 +1,289 @@
 /* 全体のスタイル */
 body {
-  font-family: 'Roboto', 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+  font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #F2F2F3;
-  color: #000000;
+  background-color: #f0f3f9;
+  color: #2c3e50;
+  line-height: 1.6;
+}
+
+/* セレクタのスタイル */
+セレクタ {
+  font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
+  color: #FFFFFF;
 }
 
 /* ヘッダー */
 .header {
-  background-color: #1C3667;
-  height: 65px;
+  background-color: #00a0e9;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-title {
   color: #FFFFFF;
-  font-size: 23px;
-  font-weight: 100;
-  letter-spacing: 1.8px;
+  font-size: 22px;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: 0.5px;
 }
 
 .header-button {
-  background-color: #FFFFFF;
-  color: #3A3736;
-  font-size: 16px;
-  padding: 5px 20px;
-  border-radius: 5px;
+  background-color: #fff;
+  color: #00a0e9;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 20px;
   text-decoration: none;
-  margin-right: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-button:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* メインコンテンツ */
 .main-content {
-  width: 700px;
-  margin: 0 auto;
-  padding-top: 20px;
+  max-width: 800px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+/* 質問カード */
+.question-item {
+  display: flex;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.question-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* コメント数表示 */
 .comment-count {
-  width: 38px;
-  height: 74px;
-  background-color: #1C3667;
-  color: #FFFFFF;
+  width: 70px;
+  background-color: #f8f9fa;
+  color: #00a0e9;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 5px;
-  margin-right: 20px;
+  padding: 15px 0;
+  border-right: 1px solid #eef2f7;
 }
 
 .count-number {
-  font-size: 26px;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 
 .count-label {
-  font-size: 11px;
+  font-size: 12px;
+  color: #8492a6;
 }
 
-/* 質問アイテム */
-.question-item {
-  display: flex;
-  margin-bottom: 25px;
-}
-
+/* 質問内容 */
 .question-content {
-  width: 500px;
-  background-color: #FFFFFF;
+  flex: 1;
   padding: 20px;
-  border-radius: 5px;
 }
 
 .question-title {
-  font-size: 14px;
-  margin-bottom: 10px;
+  margin: 0 0 12px 0;
+}
+
+.question-link {
+  color: #2c3e50;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.question-link:hover {
+  color: #00a0e9;
 }
 
 .question-text {
-  font-size: 12px;
-  color: #000000;
+  color: #5c6b7a;
+  font-size: 14px;
+  margin-bottom: 12px;
 }
 
 .question-meta {
-  text-align: right;
+  color: #8492a6;
   font-size: 12px;
-  color: #000000;
-  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+/* 質問詳細 */
+.question-detail {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.detail-item {
+  margin-bottom: 20px;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: #00a0e9;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.detail-content {
+  padding: 12px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  color: #2c3e50;
+}
+
+/* 回答フォーム */
+.answer-form {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+h3 {
+  color: #00a0e9;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #eef2f7;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #00a0e9;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 160, 233, 0.1);
+}
+
+.form-field textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.post-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #00a0e9;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.post-button:hover {
+  background-color: #0090d9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 回答一覧 */
+.answers-list {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.answer-item {
+  padding: 16px;
+  border-bottom: 1px solid #eef2f7;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.answer-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.answer-item:hover {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.answer-content {
+  color: #2c3e50;
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.answer-meta {
+  font-size: 12px;
+  color: #8492a6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.answer-author {
+  display: flex;
+  align-items: center;
+}
+
+.answer-author::before {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-color: #00a0e9;
+  border-radius: 50%;
+  margin-right: 8px;
+  opacity: 0.2;
+}
+
+/* フォームラベル */
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 14px;
 }
 
 /* 投稿フォーム */
@@ -139,3 +332,120 @@ body {
   cursor: pointer;
   margin-top: 20px;
 } 
+
+（セレクタ） {
+  letter-spacing: 3px;
+}
+
+/* 新規質問フォーム */
+.new-question-form {
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.form-title {
+  color: #00a0e9;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.question-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-field {
+  margin-bottom: 24px;
+}
+
+.form-field label {
+  display: block;
+  color: #2c3e50;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #eef2f7;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #2c3e50;
+  transition: all 0.3s ease;
+  background-color: #fff;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  border-color: #00a0e9;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 160, 233, 0.1);
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #a0aec0;
+}
+
+.form-field textarea {
+  height: 180px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.post-button {
+  flex: 1;
+  padding: 12px 24px;
+  background-color: #00a0e9;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.post-button:hover {
+  background-color: #0090d9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cancel-button {
+  flex: 1;
+  padding: 12px 24px;
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  border: 2px solid #eef2f7;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.cancel-button:hover {
+  background-color: #eef2f7;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
