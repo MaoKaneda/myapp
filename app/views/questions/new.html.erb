@@ -8,6 +8,16 @@
     <h2 class="form-title">新しい質問を投稿</h2>
     
     <%= form_with(model: @question, local: true, class: 'question-form') do |f| %>
+      <% if @question.errors.any? %>
+        <div class="error-messages">
+          <ul>
+            <% @question.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
       <div class="form-field">
         <%= f.label :title, '質問タイトル' %>
         <%= f.text_field :title, placeholder: '質問のタイトルを入力してください' %>
