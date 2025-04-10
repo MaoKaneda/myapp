@@ -1,17 +1,21 @@
 <header class="header">
+  <!-- サイトのロゴとナビゲーションボタン -->
   <%= link_to 'TechChat', root_path, class: 'header-title' %>
   <%= link_to '質問する', new_question_path, class: 'header-button' %>
 </header>
 
 <div class="main-content">
+  <!-- 質問一覧の表示 -->
   <% if @questions.any? %>
     <% @questions.each do |question| %>
       <div class="question-item">
+        <!-- コメント数の表示 -->
         <div class="comment-count">
           <div class="count-number"><%= question.answers.count %></div>
           <div class="count-label">comments</div>
         </div>
         <div class="question-content">
+          <!-- 質問のタイトルと内容 -->
           <h2 class="question-title">
             <%= link_to question.title, question_path(question), class: 'question-link' %>
           </h2>
